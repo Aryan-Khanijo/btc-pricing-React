@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import { useState, useEffect, Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import Login from './components/Login';
 import Logout from './components/Logout';
