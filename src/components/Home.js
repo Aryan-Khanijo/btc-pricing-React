@@ -35,7 +35,7 @@ async function getData(user){
   }
 
 function getBTCPrice(){
-    fetch("https://api.nomics.com/v1/currencies/ticker?key=f33efcb27d1cb3904eb8d4be4d1e71230f3da32f&ids=BTC")
+    fetch("https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/currencies/ticker?key=f33efcb27d1cb3904eb8d4be4d1e71230f3da32f&ids=BTC")
         .then(response => response.json())
         .then(data => (x = Math.floor(data[0]['price'])));
 }
@@ -54,7 +54,6 @@ async function addPrice(){
         });
     }
 }
-
 
 const Home = ({ user }) => {
     getData(user);
