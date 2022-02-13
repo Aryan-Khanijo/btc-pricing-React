@@ -4,14 +4,14 @@ import { getFirestore } from "firebase/firestore"
 
 // Use your config values here.
 firebase.initializeApp({
-  apiKey: "AIzaSyCvpSyW_WCz1VvOR_JHoh1YosY78uXPnNc",
-  authDomain: "bitcoin-project-72f67.firebaseapp.com",
-  databaseURL: "https://bitcoin-project-72f67-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "bitcoin-project-72f67",
-  storageBucket: "bitcoin-project-72f67.appspot.com",
-  messagingSenderId: "939112137370",
-  appId: "1:939112137370:web:8f6925fc0cfd2a92b41523",
-  measurementId: "G-9SRQR5EY5R"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 });
 
 // Firebase intialization
