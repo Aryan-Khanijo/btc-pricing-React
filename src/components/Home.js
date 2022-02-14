@@ -35,7 +35,7 @@ async function getData(user){
   }
 
 function getBTCPrice(){
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_BTC_API_KEY}&ids=BTC`)
+    fetch(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_BTC_API_KEY}&ids=BTC`)
         .then(response => response.json())
         .then(data => (x = Math.floor(data[0]['price'])));
 }
@@ -58,14 +58,16 @@ async function addPrice(){
 const Home = ({ user }) => {
     getData(user);
     getBTCPrice();
+    console.log(user);
 
   return (
     <div className="home">
+      <img src={user.photoURL}></img>
       <h1>Hello, <span></span>{user.displayName}</h1>
-      <p>{user.email}</p>
+      <p>Email : {user.email}</p>
       <div id='btc' className='BTCPrice'></div>
-      <button className='button getprice' onClick={showPrice}>Get Price</button>
-      <button className="button signout" onClick={() => auth.signOut()}>Sign out</button>
+      <button type="button" onClick={showPrice} className="button getprice btn btn-outline-dark">Get Price</button>
+      {/* <button className='button getprice' onClick={showPrice}>Get Price</button> */}
     </div>
   )
 }
