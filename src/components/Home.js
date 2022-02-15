@@ -35,7 +35,7 @@ async function getData(user){
   }
 
 function getBTCPrice(){
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_BTC_API_KEY}&ids=BTC`)
+    fetch(`https://cors-proxy-dragun.herokuapp.com/https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_BTC_API_KEY}&ids=BTC`)
         .then(response => response.json())
         .then(data => (x = Math.floor(data[0]['price'])));
 }
