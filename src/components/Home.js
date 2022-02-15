@@ -41,7 +41,7 @@ function getBTCPrice(){
 }
 
 function showPrice(){
-    document.getElementById('btc').innerHTML = "BTC Price is USD " + x;
+    document.getElementById('btc').innerHTML = "<b>BTC Price is USD <span class=\"btc-price\">" + x + "</span></b>";
     addPrice();
 }
 
